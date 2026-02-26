@@ -25,8 +25,8 @@ The system uses Claude Haiku to convert natural language queries into OLAP opera
 1. **Clone the repository**
 
 ```bash
-git clone <repository_url>
-cd <repository_folder>
+git clone https://github.com/adasulejmani/olap-streamlit-app
+cd olap-streamlit-app
 ```
 
 2. **Create a virtual environment**
