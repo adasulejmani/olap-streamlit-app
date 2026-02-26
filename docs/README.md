@@ -80,7 +80,7 @@ streamlit run app.py
 ## Folder Structure
 
 ```
-/olap_bi_assistant
+/olap-streamlit-app
 │
 ├─ app.py               # Main Streamlit app
 ├─ data_utils.py        # Data loading and OLAP helper functions
@@ -96,16 +96,6 @@ streamlit run app.py
 * Complex analytics may require multi-step queries.
 * Output cleaning ensures executable Python code.
 * Use `.streamlit/secrets.toml` to store API keys securely.
-
-## Deployment on GitHub + Streamlit Cloud
-
-1. Push the project to a GitHub repository.
-2. Go to [Streamlit Cloud](https://share.streamlit.io/).
-3. Click **New app**, select your GitHub repo.
-4. Choose the branch (`main`) and main file (`app.py`).
-5. Click **Deploy**.
-
-The app will run online, and users can interact with the OLAP BI Assistant through the web interface.
 
 ## Future Improvements
 

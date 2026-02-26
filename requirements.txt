@@ -1,0 +1,11 @@
+# Streamlit for web app
+streamlit==1.30.0
+
+# Pandas for data manipulation
+pandas==2.2.0
+
+# Anthropic API client
+anthropic==0.3.1
+
+# Python-dotenv for managing secrets (optional if using .streamlit/secrets.toml)
+python-dotenv==1.1.1
