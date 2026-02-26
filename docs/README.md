@@ -2,7 +2,7 @@
 
 ## Overview
 
-The OLAP BI Assistant allows users to query a dataset using natural language. Users can type questions like "Show revenue per country for 2024" and the system automatically generates and executes Python pandas code to produce the result.
+The OLAP BI Assistant is a Streamlit application that allows users to query a dataset using natural language. Users can type questions like "Show revenue per country for 2024" and the system automatically generates executable Python pandas code to perform OLAP operations.
 
 The system uses Claude Haiku to convert natural language queries into OLAP operations (slice, dice, summarize, drill-down, compare) on a pandas DataFrame.
 
@@ -11,7 +11,7 @@ The system uses Claude Haiku to convert natural language queries into OLAP opera
 * Natural language queries for analytics
 * OLAP operations: slice, dice, summarize, drill-down, compare
 * Safe execution environment for generated Python code
-* Integration with Streamlit for interactive visualization
+* Interactive visualization with Streamlit
 
 ## Prerequisites
 
@@ -51,10 +51,10 @@ Dependencies include:
 
 4. **Set up environment variables**
 
-Create a `.env` file with your Claude API key:
+Create a `.streamlit/secrets.toml` file with your Claude API key:
 
-```
-CLAUDE_API_KEY=your_api_key_here
+```toml
+ANTHROPIC_API_KEY = "your_api_key_here"
 ```
 
 5. **Prepare your dataset**
@@ -83,6 +83,7 @@ streamlit run app.py
 /olap_bi_assistant
 │
 ├─ app.py               # Main Streamlit app
+├─ data_utils.py        # Data loading and OLAP helper functions
 ├─ prompts.py           # System prompt and OLAP templates
 ├─ data/                # Folder for datasets
 ├─ requirements.txt     # Python dependencies
@@ -94,10 +95,21 @@ streamlit run app.py
 * Ensure your queries reference existing dataset columns.
 * Complex analytics may require multi-step queries.
 * Output cleaning ensures executable Python code.
+* Use `.streamlit/secrets.toml` to store API keys securely.
+
+## Deployment on GitHub + Streamlit Cloud
+
+1. Push the project to a GitHub repository.
+2. Go to [Streamlit Cloud](https://share.streamlit.io/).
+3. Click **New app**, select your GitHub repo.
+4. Choose the branch (`main`) and main file (`app.py`).
+5. Click **Deploy**.
+
+The app will run online, and users can interact with the OLAP BI Assistant through the web interface.
 
 ## Future Improvements
 
-* JSON output for results
+* Structured JSON output for results
 * Query validation before execution
 * Auto chart generation
 * Enhanced security and execution guardrails
